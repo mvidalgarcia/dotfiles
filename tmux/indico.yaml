@@ -17,7 +17,7 @@ windows:
       -
         shell_command:
           - indico_dblog
-      - shell_command: indico shell -q
+      - shell_command: indico shell
       -
         focus: true
         shell_command: echo '\033[0;35mBonjour, have a \033[0;36mhappy coding :)'

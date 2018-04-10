@@ -1,31 +1,18 @@
 session_name: main
 windows:
-  -
-    window_name: root
+  - window_name: root
     panes:
-      -
-        shell_command:
-          - sudo su -
+      - shell_command: sudo su -
 
   # 2 - indico
-  -
-    window_name: indico
+  - window_name: indico
     layout: tiled
     start_directory: ~/dev/indico/src
     focus: true
     panes:
-      -
-        shell_command:
-          - indico_dblog
+      - shell_command: indico_dblog
       - shell_command: indico shell
-      -
-        focus: true
+      - focus: true
         shell_command: echo '\033[0;35mBonjour, have a \033[0;36mhappy coding :)'
-      -
-        start_directory: ~/dev/indico/plugins/public
-
-  # 3 - IRC
-  -
-    window_name: IRC
-    panes:
-      - shell_command: weechat
+      - start_directory: ~/dev/indico/plugins/public
+        shell_command: tmux-smartsplit v

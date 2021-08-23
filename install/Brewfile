@@ -1,7 +1,9 @@
 tap "helm/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
+
 brew "act"
 brew "autoconf"
 brew "automake"
@@ -40,4 +42,11 @@ brew "watch"
 brew "wget"
 brew "yarn"
 brew "helm/tap/chart-releaser"
+
+# Casks
 cask "stats"
+cask "spotify"
+cask "google-chrome"
+cask "font-fira-code"
+cask "visual-studio-code"
+cask "vlc"

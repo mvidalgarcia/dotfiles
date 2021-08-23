@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case $1 in
+    connect)
+        # sshuttle --dns -vr mvidalga@lxplus.cern.ch 137.138.0.0/16 128.141.0.0/16 128.142.0.0/16 188.184.0.0/15 --daemon --pidfile /tmp/sshuttle.pid
+	# Set up a poor man's VPN (note the unusual and required --python option)
+	sshuttle --dns -vr mvidalga@lxtunnel.cern.ch 137.138.0.0/16 128.141.0.0/16 128.142.0.0/16 188.184.0.0/15 --pidfile /tmp/sshuttle.pid --python=python
+        shift
+    ;;
+    disconnect)
+        kill `cat /tmp/sshuttle.pid`
+        shift
+    ;;
+    *)
+        # unknown option
+   ;;
+esac
+

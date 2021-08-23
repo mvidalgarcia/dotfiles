@@ -1,0 +1,20 @@
+[user]
+	email = marco.vidal@cern.ch
+	name = Marco Vidal García
+[alias]
+	commend = commit --amend --no-edit
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	purr = pull --rebase
+	standup = log --since yesterday --author Marco --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	puff = pull --ff-only
+[pager]
+	branch = false
+	log = false
+[core]
+	excludesfile = /Users/marco/.gitignore_global
+	pager = less
+	ignorecase = false

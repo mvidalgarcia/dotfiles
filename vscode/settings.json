@@ -1,0 +1,79 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "gitProjectManager.baseProjectsFolders": ["~/code"],
+    "files.insertFinalNewline": true,
+    "[git-commit]": {"editor.rulers": [50]},
+    "[python]": {
+        "editor.rulers": [88, 120],
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.python",
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+    },
+    "eslint.workingDirectories": [
+        "./reana-ui"
+    ],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.linting.pydocstyleEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black",
+    "scss.lint.duplicateProperties": "warning",
+    "scss.lint.idSelector": "warning",
+    "scss.lint.important": "warning",
+    "scss.lint.universalSelector": "warning",
+    "[scss]": {
+        "editor.tabSize": 2,
+    },
+    "files.associations": {
+        "*.scss": "scss",
+        "*.jsx": "javascript"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.exclude": {
+        ".eggs/": true,
+        "**/__pycache__/": true,
+        "**/*.pyc": true
+    },
+    "workbench.colorCustomizations": {
+        "[One Monokai]": {
+            "editor.selectionHighlightBackground": "#404a5e" // It was too light
+        }
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "One Monokai",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "github-actions.org-features": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+}

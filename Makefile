@@ -4,7 +4,7 @@ PATH := $(DOTFILES_DIR)/bin:$(PATH)
 
 all: $(OS)
 
-macos: core-macos packages link
+macos: core-macos packages oh-my-zsh link
 
 core-macos: brew
 
@@ -30,5 +30,10 @@ link: stow-$(OS)
 
 unlink: stow-$(OS)
 	stow --delete -t $(HOME) config
+
+oh-my-zsh:
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 
 # Work in progress... Inspiration from https://github.com/webpro/dotfiles

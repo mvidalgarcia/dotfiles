@@ -18,6 +18,7 @@ brew-packages: brew
 
 vscode: brew-packages
 	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 node-packages: brew-packages
 	eval $$(fnm env); npm install -g $(shell cat install/npmfile)
@@ -27,6 +28,8 @@ stow-macos: brew
 
 link: stow-$(OS)
 	stow -t $(HOME) config
+	mkdir ~/bin
+	stow -t $(HOME)/bin bin
 
 unlink: stow-$(OS)
 	stow --delete -t $(HOME) config

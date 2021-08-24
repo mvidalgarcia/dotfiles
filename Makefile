@@ -28,11 +28,12 @@ stow-macos: brew
 
 link: stow-$(OS)
 	stow -t $(HOME) config
-	mkdir ~/bin
+	mkdir -p ~/bin
 	stow -t $(HOME)/bin bin
 
 unlink: stow-$(OS)
 	stow --delete -t $(HOME) config
+	stow --delete -t $(HOME)/bin bin
 
 oh-my-zsh:
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

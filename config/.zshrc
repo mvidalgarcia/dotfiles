@@ -102,8 +102,8 @@ source $ZSH/oh-my-zsh.sh
 
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
-source /usr/local/bin/virtualenvwrapper.sh
+VIRTUALENVWRAPPER_PYTHON=$HOME'/.pyenv/shims/python'
+source ~/.pyenv/versions/3.8.12/bin/virtualenvwrapper.sh
 export TERM=xterm-256color
 
 # REANA
@@ -118,3 +118,7 @@ alias hh=hstr                    # hh to be alias for hstr
 setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor,raw-history-view       # get more colors, sort by most recent first
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+
+# pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"

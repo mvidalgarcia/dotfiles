@@ -1,0 +1,11 @@
+#!/bin/bash
+
+year=$(date +'%Y')
+file=$1
+
+copyright="$(head -10 $file | grep "Copyright.*CERN" | grep $year)"
+if [ -z "$copyright" ]; then
+    sed -i.bk -E "s|(Copyright.*[0-9]{4}.*)( CERN)|\1, $year\2|g" $file && [ -e $file.bk ] && rm $file.bk
+fi
+
+echo "end"

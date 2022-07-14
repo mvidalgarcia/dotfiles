@@ -101,18 +101,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=$HOME'/.pyenv/shims/python'
-source ~/.pyenv/versions/3.8.12/bin/virtualenvwrapper.sh
-export TERM=xterm-256color
-
-# REANA
-alias rc=reana-client
-alias rdev=reana-dev
+# export WORKON_HOME=~/.virtualenvs
+# VIRTUALENVWRAPPER_PYTHON=$HOME'/.pyenv/shims/python'
+# source ~/.pyenv/versions/3.8.12/bin/virtualenvwrapper.sh
+# export TERM=xterm-256color
 
 # k8s
-alias kc=kubectl
-source <(kubectl completion zsh)
+# alias kc=kubectl
+# source <(kubectl completion zsh)
+
+# pyenv
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+# export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # HSTR configuration - add this to ~/.zshrc
 alias hh=hstr                    # hh to be alias for hstr
@@ -120,13 +122,10 @@ setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor,raw-history-view       # get more colors, sort by most recent first
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
-# pyenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# tmux misbehaves without this
+export TERM=xterm-256color
